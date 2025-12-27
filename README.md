@@ -1,4 +1,6 @@
 # Spring Boot User API (v1)
+> **Version 1:** In-memory implementation focused on REST fundamentals and backend best practices.
+
 
 A RESTful User Management API built with Spring Boot that demonstrates clean architecture, validation, proper HTTP status codes, and full CRUD functionality.
 
@@ -86,9 +88,6 @@ Handles non-existent resources gracefully.
 
 http://localhost:8080
 
-yaml
-Copy code
-
 ---
 
 ## 🎯 Why This Project
@@ -116,6 +115,8 @@ It is intentionally kept framework-light and database-free in v1 to emphasize co
 ## 👤 Author
 
 **Ambrogio Bailey**  
-Aspiring Software Developer  
+Aspiring Backend Software Developer  
+Java • Spring Boot • REST APIs  
+
 GitHub: https://github.com/AmbrogioBailey  
 LinkedIn: https://linkedin.com/in/ambrogio-bailey
