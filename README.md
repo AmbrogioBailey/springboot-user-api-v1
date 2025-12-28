@@ -6,6 +6,24 @@ A RESTful User Management API built with Spring Boot that demonstrates clean arc
 
 This project was built to showcase backend fundamentals commonly expected in entry-level and junior software engineering roles.
 
+## 🚀 Version 2 (In Progress)
+
+Version 2 of this User API focuses on evolving the application from a
+basic REST service into a more production-style backend system.
+
+Planned improvements include:
+
+- Database integration using Spring Data JPA and H2
+- Persistent storage (replacing in-memory data)
+- DTOs for request and response handling
+- Input validation with meaningful error responses
+- Global exception handling
+- Pagination and sorting for API endpoints
+- Cleaner layered architecture (Controller → Service → Repository)
+
+This version is being developed incrementally to reflect real-world
+backend development practices and industry standards.
+
 ---
 
 ## 🚀 Features
