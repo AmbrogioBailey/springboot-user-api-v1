@@ -1,54 +1,66 @@
-# Spring Boot User API (v1)
-> **Version 1:** In-memory implementation focused on REST fundamentals and backend best practices.
+# Spring Boot User API
+> A versioned RESTful User Management API built with Spring Boot, demonstrating backend fundamentals and progressive real-world enhancements.
 
-
-A RESTful User Management API built with Spring Boot that demonstrates clean architecture, validation, proper HTTP status codes, and full CRUD functionality.
-
-This project was built to showcase backend fundamentals commonly expected in entry-level and junior software engineering roles.
-
-## 🚀 Version 2 (In Progress)
-
-Version 2 of this User API focuses on evolving the application from a
-basic REST service into a more production-style backend system.
-
-Planned improvements include:
-
-- Database integration using Spring Data JPA and H2
-- Persistent storage (replacing in-memory data)
-- DTOs for request and response handling
-- Input validation with meaningful error responses
-- Global exception handling
-- Pagination and sorting for API endpoints
-- Cleaner layered architecture (Controller → Service → Repository)
-
-This version is being developed incrementally to reflect real-world
-backend development practices and industry standards.
+This project is intentionally developed in **versions** to reflect how production backend systems evolve over time.  
+Each version builds on the previous one while preserving clean architecture and REST best practices.
 
 ---
 
-## 🚀 Features
+## 🧩 Version 1 — In-Memory REST API
 
-- Full CRUD operations for users
-- Bean Validation with meaningful error responses
+**Version 1** focuses on core backend fundamentals without database persistence, emphasizing clean REST design and application structure.
+
+### V1 Highlights
+- In-memory data storage using Java collections
+- Full CRUD REST endpoints
 - Proper HTTP status codes (`200`, `201`, `400`, `404`, `204`)
+- Bean Validation with meaningful error messages
 - Global exception handling
-- Auto-generated user IDs
-- Clean separation of controller, service, and model layers
+- Clean separation of Controller → Service → Model
+
+> **Goal of V1:** Demonstrate REST fundamentals and backend architecture without database complexity.
 
 ---
 
-## 🛠 Tech Stack
+## 🚀 Version 2 — Database Persistence (Spring Data JPA + H2)
 
-- Java
-- Spring Boot
-- Spring Web
-- Jakarta Bean Validation
-- Maven
-- Postman (for API testing)
+**Version 2** upgrades the API from an in-memory list to a **real database-backed implementation** using **Spring Data JPA** and an **H2 in-memory database**.
+
+This version introduces persistence, automatic ID generation, and database verification while preserving the original API behavior.
+
+### ✅ What’s New in V2
+- Persistent storage using **Spring Data JPA**
+- Auto-generated IDs with `@GeneratedValue`
+- Entity mapping with `@Entity` and `@Table`
+- Request validation using Bean Validation (`@NotBlank`, `@Email`)
+- H2 Console enabled for database inspection
+- Clean layered architecture:
+   - Controller → Service → Repository
 
 ---
 
-## 📌 API Endpoints
+### ▶ Run Locally (V1 or V2)
+
+1. Run the application:
+   - `UserapiApplication`
+
+2. API Base URL:
+   - `http://localhost:8080`
+
+---
+
+### 🗄 H2 Console (V2)
+
+- URL: `http://localhost:8080/h2-console`
+
+**Login Settings**
+- JDBC URL: `jdbc:h2:mem:userdb`
+- Username: `sa`
+- Password: *(leave blank)*
+
+---
+
+### 🔥 API Endpoints (V1 & V2)
 
 | Method | Endpoint            | Description                  | Status Codes |
 |------|---------------------|------------------------------|-------------|
@@ -60,73 +72,69 @@ backend development practices and industry standards.
 
 ---
 
-## 📸 API Examples (Postman)
+### 📸 Proof — Version 2 Persistence
+
+#### Create User (POST /users)
+![POST User](screenshots/post-user.png)
+
+#### Database Verification (H2 Console)
+![H2 Users Table](screenshots/h2-users.png)
+
+---
+
+## 📸 API Examples — Version 1 (In-Memory)
+
+These screenshots demonstrate the original in-memory implementation used in Version 1.
 
 ### GET /users — 200 OK
-Returns all users in the system.
-
 ![GET users](screenshots/get-users-200.png)
 
----
-
 ### POST /users — 201 Created
-Creates a new user with an auto-generated ID.
-
 ![POST user](screenshots/post-user-201.png)
 
----
-
 ### Validation Errors — 400 Bad Request
-Returns field-level validation messages for invalid input.
-
 ![Validation errors](screenshots/validation-errors-400.png)
 
----
-
 ### PUT /users/{id} — 200 OK
-Updates an existing user.
-
 ![Update user](screenshots/put-user-200.png)
 
----
-
 ### PUT /users/{id} — 404 Not Found
-Handles non-existent resources gracefully.
-
 ![Not found](screenshots/not-found-404.png)
 
 ---
 
-## ▶️ Running the Project
+## 🚀 Features
 
-1. Clone the repository
-2. Open the project in IntelliJ IDEA
-3. Run the Spring Boot application
-4. The API will be available at:
-
-http://localhost:8080
-
----
-
-## 🎯 Why This Project
-
-This project focuses on backend fundamentals:
-- RESTful design
-- Validation and error handling
-- Clean service/controller separation
-- Real-world API behavior
-
-It is intentionally kept framework-light and database-free in v1 to emphasize core concepts.
+- Full CRUD operations
+- Bean Validation with clear error responses
+- Proper HTTP status codes
+- Global exception handling
+- Auto-generated user IDs
+- Clean layered architecture
+- Database persistence (V2)
 
 ---
 
-## 🔜 Next Steps (Planned)
+## 🛠 Tech Stack
 
-- JPA + Hibernate integration
-- Persistent database (H2 / PostgreSQL)
-- DTOs and mapping
-- Pagination and sorting
-- API documentation (Swagger / OpenAPI)
+- Java
+- Spring Boot
+- Spring Web
+- Spring Data JPA
+- H2 Database
+- Jakarta Bean Validation
+- Maven
+- Postman
+
+---
+
+## 🔜 Next Steps (Planned — V3)
+
+- DTOs for request/response separation
+- Pagination and sorting with Spring Data
+- API documentation with Swagger / OpenAPI
+- Optional PostgreSQL integration
+- Basic authentication & authorization
 
 ---
 
@@ -134,7 +142,8 @@ It is intentionally kept framework-light and database-free in v1 to emphasize co
 
 **Ambrogio Bailey**  
 Aspiring Backend Software Developer  
-Java • Spring Boot • REST APIs  
+Java • Spring Boot • REST APIs
 
 GitHub: https://github.com/AmbrogioBailey  
 LinkedIn: https://www.linkedin.com/in/ambrogio-bailey-b67529373/
+
